@@ -1,16 +1,24 @@
-# React + Vite
+📝 Note: কেন Firebase Secret Key GitHub-এ কমিট করা যাবে না এবং .env ফাইলের গুরুত্ব
+🔐 Firebase Secret Key কমিট না করার কারণ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Firebase-এর secret key (যেমন API key, service account key ইত্যাদি) দিয়ে কেউ তোমার প্রজেক্টে full access পেতে পারে।
 
-Currently, two official plugins are available:
+এগুলো ফাঁস হলে –
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+কেউ তোমার Firebase database, authentication system, বা storage-এ প্রবেশ করতে পারে।
 
-## React Compiler
+অপব্যবহার বা ডেটা লিক হতে পারে।
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Firebase bill অযথা বেড়ে যেতে পারে।
 
-## Expanding the ESLint configuration
+প্রজেক্টের নিরাপত্তা নষ্ট হয়ে যেতে পারে।
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧩 .env ফাইলের কাজ ও গুরুত্ব
+
+.env মানে Environment Variable File, যেখানে secret key বা config data কোডের বাইরে আলাদা করে রাখা হয়।
+
+.env ফাইল .gitignore-এ রাখা হয়, তাই এটি GitHub-এ আপলোড হয় না।
+
+এর ফলে কোড secure, clean এবং maintainable থাকে।
+
+আলাদা environment (development, production, test) অনুযায়ী ভিন্ন key ব্যবহার করা যায়।
